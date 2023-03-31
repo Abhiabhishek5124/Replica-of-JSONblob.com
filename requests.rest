@@ -1,0 +1,21 @@
+### GET REQUEST
+GET http://localhost:8080
+
+
+### POST REQUEST
+POST http://localhost:8080
+content-type: application/json
+
+{"test":"xxxxxxxxxxxxxxxxxxxxxxxxx"}
+
+
+### PUT REQUEST
+PUT http://localhost:8080
+content-type: application/json
+
+{
+	"hello":{"world"}
+}
+
+### DELETE REQUEST
+DELETE http://localhost:8080
