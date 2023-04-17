@@ -3,24 +3,29 @@ const server=http.createServer().listen(8080);
 
 const process=require('./lib/process.js');
 
-server.on('request',async(req,res)=>{
+const GET =require('./lib/get.js');
+const POST=require('./lib/post.js');
+const PUT=require('./lib/put.js');
+const DELETE=require('./lib/Delete.js');
 
+server.on('request',async(req,res)=>{
+console.log(req.method);
 switch (req.method){
 	case 'GET':
-		get(req,res)
+		GET(req,res)
 		break;
 	case 'POST':
-		post(req,res)
+		POST(req,res)
 		break;
 	case 'PUT':
-		put(req,res)
+		PUT(req,res)
 		break;
 	case 'DELETE' :
-		del(req,res)
+		DELETE(req,res)
 		break;
 	default:
-
-
+		res.statusCode = 405;
+		res.end("Invalid Method");
 
 }});
 
